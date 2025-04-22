@@ -1,7 +1,8 @@
+"use client"
 import { useRef, useEffect } from 'react'
+import { useRouter } from 'next/navigation'
 import { Network, type Node, Edge, DataInterfaceNodes } from 'vis-network'
-
-import './global.css'
+import style from './page.module.scss'
 
 const nodes: Node[] = [
   { 
@@ -153,4 +154,16 @@ function HomePage() {
   )
 }
 
-export default HomePage
+export default function() {
+  const router = useRouter()
+  return (
+    <main className={style.container}>
+      <aside className={style.aside}></aside>
+      <section>
+        <div>
+          
+        </div>
+      </section>
+    </main>
+  )
+}
